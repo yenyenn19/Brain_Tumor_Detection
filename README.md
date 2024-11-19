@@ -32,31 +32,33 @@ Run the app with following command.
 `python app.py`
 
 ## Folder Structure
-Brain_Tumor_Detection/
-│
-├── datasets/
-│   └── test/
-│       ├── images/
-│       └── labels/
-│
-├── model/
-│   └── detr_resnet_101/
-│       └── DETR_model/
-|           ├── config
-|           └── model.safetensors
-|   └── yolov8
-|       └──best.pt
-│
-├── static/
-│   └── css/
-│       └── styles.css
-│
-├── templates/
-│   ├── index.html
-│   └── predict.html
-│
-├── brain_tumor_probs.py
-├── brain_tumor_visual.py
-├── detr_model.py
-├── README.md
-└── requirements.txt
+
+    Brain_Tumor_Detection/
+    │  
+    ├── datasets/
+    │   └── test/
+    │       ├── images/
+    │       └── labels/
+    │
+    ├── model/
+    │   └── detr_resnet_101/
+    │       └── DETR_model/
+    |           ├── config
+    |           └── model.safetensors
+    |   └── yolov8
+    |       └──best.pt
+    │  
+    ├── static/
+    │   └── css/
+    │       └── styles.css
+    │
+    ├── templates/
+    │   ├── index.html
+    │   └── predict.html
+    │
+    ├── brain_tumor_probs.py
+    ├── brain_tumor_visual.py
+    ├── detr_model.py
+    ├── README.md
+    └── requirements.txt
+    
