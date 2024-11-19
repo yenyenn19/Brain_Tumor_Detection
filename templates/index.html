@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection</title>
+    <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+
+<body>
+    <h1>Brain Tumor Detection</h1>
+
+    <div class="container">
+        <form id="predictionForm" method="POST" action="/predict" enctype="multipart/form-data">
+            <!-- Model Selection -->
+            <div class="model-selection">
+                <select id="modelDropdown" name="model" required>
+                    <option value="" disabled selected>Choose a Model</option>
+                    <option value="yolov8">YOLOv8</option>
+                    <option value="DETR-Resnet-101">DETR-Resnet-101</option>
+                    <option value="faster-rcnn">Faster R-CNN</option>
+                </select>
+            </div>
+
+            <!-- File Upload -->
+            <label class="custom-file-upload">
+                <input type="file" id="fileInput" name="file" accept="image/*" onchange="previewImage()" required>
+                Choose File
+            </label>
+
+            <!-- Predict Button -->
+            <button type="submit" class="predict-button">Predict</button>
+        </form>
+
+        <!-- Image Preview -->
+        <div class="image-preview" id="imagePreview">
+            <img id="previewImg" src="" alt="Image Preview" style="display: none;">
+        </div>
+    </div>
+
+    <script>
+        function previewImage() {
+            const fileInput = document.getElementById('fileInput');
+            const previewImg = document.getElementById('previewImg');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    previewImg.src = e.target.result;
+                    previewImg.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+
+</html>
